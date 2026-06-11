@@ -1,20 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaClient } from 'generated/prisma/client';
+import { PrismaClient } from '@prisma/client';
 
 @Injectable()
 export class PrismaService extends PrismaClient {
-    constructor(
-        private prismaService:PrismaService
-    ){
-        super(
-            {
-                datasources:{
-                    db:{
-                        url:process.env.DATABASE_URL
-                    }
-                    
-                }
-            }
-        )
-    }
+  constructor() {
+    super({
+      datasources: {
+        db: {
+          url: process.env.DATABASE_URL,
+        },
+      },
+    });
+  }
 }
