@@ -3,7 +3,7 @@ import { IsEmail, IsNotEmpty, IsString, Max, Min, MinLength } from "class-valida
 export class AuthDto{
     @IsEmail()
     @IsNotEmpty()
-    email!:string;
+    email!: string;
     
     @IsString()
     @IsNotEmpty()
